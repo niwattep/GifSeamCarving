@@ -54,6 +54,7 @@ import sys
 import multiprocessing as mp
 from functools import partial
 import imageio
+import time
 
 inf = 1e1000
 verbose = False
@@ -389,6 +390,7 @@ def CAIS(input_img, resolution, output, mark, gif):
     @output: the file name of the output_img
     @mark: Useful debugging feature to show which seams are being deleted
     """
+    t0 = time.time()
     if gif:
         input_frames: Image = extract_frames(input_img)
         result_frames = carve_gif(input_frames, resolution)
@@ -398,6 +400,7 @@ def CAIS(input_img, resolution, output, mark, gif):
         output_image = carve(input, resolution)
         output_image.save(output, "JPEG")
         output_image.show()
+    print("execution time: ", time.time() - t0)
 
 
 def carve(input, resolution):
