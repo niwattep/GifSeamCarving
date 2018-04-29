@@ -1,6 +1,4 @@
-A python script that implements Seam Carving / Content Aware Image Scaling.
+An implementation of seam carving for gif image based on https://github.com/sameeptandon/python-seam-carving implementation. The program is not optimized and has long execution time per image.
 
-A sample command:
-python CAIS.py -i input.jpg -r 400 500 -o output.jpg -v
-
-This will rescale input.jpg to 400 x 500 pixels and save it as output.jpg. The -v will make the process verbose 
+command:
+python CAIS.py -i input.gif -r 400 500 -o output.gif -g
